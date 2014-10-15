@@ -18,6 +18,7 @@ describe(".adx Export", function() {
     it("should write .adx data", function() {
         var writer = new adif.AdxWriter("node-adif test", "1.0");
         writtenData = writer.writeAll([testData]);
+        assert.equal(writtenData, writer.getData());
         assert(writtenData.length > 0);
     });
 

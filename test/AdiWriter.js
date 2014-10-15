@@ -18,6 +18,7 @@ describe(".adi Export", function() {
     it("should write .adi data", function() {
         var writer = new adif.AdiWriter("node-adif test", "1.0");
         writtenData = writer.writeAll([testData]);
+        assert.equal(writtenData, writer.getData());
         assert(writtenData.length > 0);
     });
 
