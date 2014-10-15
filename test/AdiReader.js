@@ -1,16 +1,16 @@
 var adif = require("../index")
     assert = require("assert");
 
-describe(".adi Import", function() {
-    var testData = "# test\n"
-                 + "<ADIF_VER:5>3.0.4<EOH>\n"
-                 + "<CALL:5>AB3CD<QSO_DATE:8>19030728<TIME_ON:4>2215"
-                 + "<QSO_DATE_OFF:8>19030729<TIME_OFF:6>014543<CQZ:2:N>14"
-                 + "<QSO_RANDOM:1>Y<BAND:3>40M<EOR>";
+var testData = "# test\n"
+             + "<ADIF_VER:5>3.0.4<EOH>\n"
+             + "<CALL:5>AB3CD<QSO_DATE:8>19030728<TIME_ON:4>2215"
+             + "<QSO_DATE_OFF:8>19030729<TIME_OFF:6>014543<CQZ:2:N>14"
+             + "<QSO_RANDOM:1>Y<BAND:3>40M<EOR>";
 
+describe(".adi Import", function() {
     var record = null;
 
-    it("should read a .adi file", function() {
+    it("should read an .adi file", function() {
         var reader = new adif.AdiReader(testData);
         var records = reader.readAll();
         assert.equal(records.length, 1);

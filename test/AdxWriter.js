@@ -12,9 +12,23 @@ var testData = {
 };
 
 describe(".adx Export", function() {
+    var writtenData = null;
+    var readData = null;
+
     it("should write .adx data", function() {
-        var writer = new adif.AdxWriter([{"value": testData}]);
-        writtenData = writer.writeAll();
+        var writer = new adif.AdxWriter("node-adif test", "1.0");
+        writtenData = writer.writeAll([testData]);
         assert(writtenData.length > 0);
+    });
+
+    it("should read the generated data", function() {
+        var reader = new adif.AdxReader(writtenData);
+        var data = reader.readAll();
+        assert.equal(data.length, 1);
+        readData = data[0];
+    });
+
+    it("should be the same as the written data", function() {
+        assert.deepEqual(testData, readData);
     });
 });
