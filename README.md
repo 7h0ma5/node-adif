@@ -20,11 +20,11 @@ var contact = {
 };
 
 // Generate .adi data
-var adiWriter = new AdiWriter("MyAppName", "1.0");
+var adiWriter = new adif.AdiWriter("MyAppName", "1.0");
 var adiData = adiWriter.writeAll([contact]);
 
 // Generate .adx data
-var adxWriter = new AdxWriter("MyAppName", "1.0");
+var adxWriter = new adif.AdxWriter("MyAppName", "1.0");
 var adxData = adxWriter.writeAll([contact]);
 ```
 
@@ -35,11 +35,11 @@ var adif = require("adif");
 
 // Read .adi data
 var adiData = "<CALL:6>AB0CDE<FREQ:6>14.245<MODE:3>SSB ...";
-var adiReader = new AdiReader(adiData);
+var adiReader = new adif.AdiReader(adiData);
 var contacts = adiReader.readAll();
 
 // Generate .adx data
 var adxData = "<ADX><RECORDS><RECORD><CALL>AB0CDE</CALL> ... </RECORD></RECORDS></ADX>";
-var adxReader = new AdxReader(adiData);
+var adxReader = new adif.AdxReader(adiData);
 var contacts = adxReader.readAll();
 ```
