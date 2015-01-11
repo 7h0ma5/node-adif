@@ -5,6 +5,7 @@ var testData = "# test\n"
              + "<ADIF_VER:5>3.0.4<EOH>\n"
              + "<CALL:5>AB3CD<QSO_DATE:8>19030728<TIME_ON:4>2215"
              + "<QSO_DATE_OFF:8>19030729<TIME_OFF:6>014543<CQZ:2:N>14"
+             + "<QSLRDATE:8>20130925"
              + "<QSO_RANDOM:1>Y<BAND:3>40M<EOR>";
 
 describe(".adi Import", function() {
@@ -27,6 +28,10 @@ describe(".adi Import", function() {
 
     it("should parse the end date and time (datetime)", function() {
         assert.equal(record.end, "1903-07-29T01:45:43.000Z");
+    });
+
+    it("should parse the qsl received date", function() {
+        assert.equal(record.qslrdate, "2013-09-25T00:00:00.000Z");
     });
 
     it("should parse the cq zone (number)", function() {

@@ -8,7 +8,8 @@ var testData = {
     "band": "20M",
     "freq": 14.253,
     "cqz": 14,
-    "qso_random": true
+    "qso_random": true,
+    "qslrdate": "2012-12-21T00:00:00.000Z"
 };
 
 describe(".adx Export", function() {

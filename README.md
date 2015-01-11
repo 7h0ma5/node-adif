@@ -38,7 +38,7 @@ var adiData = "<CALL:6>AB0CDE<FREQ:6>14.245<MODE:3>SSB ...";
 var adiReader = new adif.AdiReader(adiData);
 var contacts = adiReader.readAll();
 
-// Generate .adx data
+// Read .adx data
 var adxData = "<ADX><RECORDS><RECORD><CALL>AB0CDE</CALL> ... </RECORD></RECORDS></ADX>";
 var adxReader = new adif.AdxReader(adiData);
 var contacts = adxReader.readAll();

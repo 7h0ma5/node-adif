@@ -18,6 +18,7 @@ var testData = '<?xml version="1.0" encoding="UTF-8"?>\n'
              + "      <CQZ>14</CQZ>\n"
              + "      <QSO_RANDOM>Y</QSO_RANDOM>\n"
              + "      <BAND>40M</BAND>\n"
+             + "      <QSLRDATE>20130925</QSLRDATE>\n"
              + "    </RECORD>\n"
              + "  </RECORDS>\n"
              + "</ADX>\n";
@@ -43,6 +44,10 @@ describe(".adx Import", function() {
 
     it("should parse the end date and time (datetime)", function() {
         assert.equal(record.end, "1903-07-29T01:45:43.000Z");
+    });
+
+    it("should parse the qsl received date", function() {
+        assert.equal(record.qslrdate, "2013-09-25T00:00:00.000Z");
     });
 
     it("should parse the cq zone (number)", function() {
