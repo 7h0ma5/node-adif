@@ -1,6 +1,6 @@
 {
   "name": "adif",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Amateur Data Interchange Format (ADIF) parser and generator",
   "author": "Thomas Gatzweiler <dl2ic@darc.de>",
   "license": "GPL-3.0",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "dateformat": "~1.0.11",
-    "libxmljs": "^0.13.0"
+    "libxmljs": "^0.14.2"
   },
   "devDependencies": {
     "mocha": "^2.1.0",
